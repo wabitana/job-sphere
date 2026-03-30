@@ -4,7 +4,8 @@ import JobDetails from "./pages/JobDetails"
 import SavedJobs from "./pages/SavedJobs"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
-
+import Dashboard from "./Dashboard";
+import ProtectedRoute from "./ProtectedRoute";
 import Applications from "./pages/Applications";
 import Companies from "./pages/Companies";
 import Contact from "./pages/Contact";
@@ -25,6 +26,16 @@ return (
 <Route path="/applications" element={<Applications />} />
         <Route path="/companies" element={<Companies />} />
         <Route path="/contact" element={<Contact />} />
+
+        {/* PROTECTED DASHBOARD */}
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
 
 </Routes>
 
